@@ -24,11 +24,8 @@ for i in range(len(sta_name)):
         txy = sta_xy.loc[sta_xy[0] == xy]
         avg_x = avg_x + txy.iloc[0,1]
         avg_y = avg_y + txy.iloc[0,2]
-    print(round(avg_x/len(temp_xy)))
-    print(round(avg_y/len(temp_xy)))
-    print(sta_con[1][sta])
     df.loc[i] = [str(round(avg_x/len(temp_xy))), str(round(avg_y/len(temp_xy))), sta_con[1][sta]]
-print(df)
+    
 df.to_csv(sta_con_name+'_for_plot',header=0,index=0,sep='\t')
 
 
